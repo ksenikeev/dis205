@@ -5,7 +5,11 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
+import java.util.logging.Logger;
+
 public class MessageSender implements Runnable {
+
+    private Logger logger = Logger.getLogger("ru.itis.dis205.lab01.MessageSender");
 
     private Message message;
     private Long who;
@@ -20,8 +24,14 @@ public class MessageSender implements Runnable {
     @Override
     public void run() {
 
+        if (message.getDocument() != null) {
+            System.out.println(message.getDocument().getFileName());
+            ;
+        }
+
         if (message.isCommand()) {
             System.out.println(message.getText() + " is command");
+            logger.info(message.getText() + " is command");
 
             if (message.getText().equals("/cmd")) {}
         }
@@ -35,7 +45,9 @@ public class MessageSender implements Runnable {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        sendText(who, message.getText(), bot);
+
+        if (message.getText() != null)
+            sendText(who, message.getText(), bot);
     }
 
 
