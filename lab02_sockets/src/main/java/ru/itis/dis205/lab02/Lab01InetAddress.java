@@ -1,4 +1,4 @@
-package lab01;
+package ru.itis.dis205.lab02;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
