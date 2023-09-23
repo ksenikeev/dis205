@@ -9,4 +9,6 @@ public class Client {
     private String name;
     private Bank bank;
     private String passport;
+
+
 }
