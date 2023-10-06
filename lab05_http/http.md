@@ -68,3 +68,63 @@ Date: Fri, 29 Sep 2023 06:00:24 GMT \r\n
 }],
 "cur": "RUB"
 }
+
+
+
+
+
+
+
+## Коды ответов
+
+- 200 ОК  (обобщенный положительный ответ)
+- 201 Created (запрос успешный, данные созданы; используют для PUT или POST)
+- 302 Moved Temporarily (страница перемещена, куда - смотрим заголовок Location)
+- 400 Bad Request (неверно сформированный запрос)
+- 401 Unauthorized (требуется выполнить аутентификацию)
+- 404 Not Found (запрашиваемого ресурса нет)
+- 405 Forbidden (для указанного ресурса метод не поддерживается)
+- 500 Internal Server Error (ошибка на стороне сервера)
+
+
+
+
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Sat, 08 Mar 2014 22:29:53 GMT
+Content-Type: text/html
+Content-Length: 154
+Connection: keep-alive
+Keep-Alive: timeout=25
+Location: http://habrahabr.ru/users/alizar/
+
+<html>
+<head><title>302 Found</title></head>
+<body bgcolor="white">
+<center><h1>302 Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+
+
+
+## Заголовки
+
+- General Headers
+- Request Headers
+- Response Headers
+
+- Accept (клиент ожидает ответ в определенном формате, Accept: text/plain)
+- Accept-Charset (список поддерживаемых кодировок клиента, Accept-Charset: utf-8)
+- Authorization (данные для авторизации на сервере, Authorization: Basic 9j787ewjkh,m232413==)
+- Connection (сведения о состоянии соединения, Connection: close)
+- Content-Encoding (сведения о кодировке, передаваемых данных, Content-Encoding: utf-8)
+- Content-Length (Content-Length: 154)
+- Content-Type (Content-Type: text/html;charset=utf-8) 
+- Date (Date: Tue, 01 Nov 2022 08:11:11 GMT)
+- Host (Доменное имя и порт хоста запрашиваемого ресурса, Host: itislabs.ru)
+- Location (Новое расположение ресурса: Location: http://itislabs.ru/newaddress)
+- Server (Server: NgInx)
+- User-Agent (Mozilla/5.0 (X11; Linux i686; rv:2.0.1) Gecko/20100101 Firefox/4.0.1)
+- Allow (Allow: GET, HEAD, OPTIONS)
