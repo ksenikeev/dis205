@@ -9,5 +9,5 @@ public interface ResourceHandler {
      * @param params [name:value]
      * @return
      */
-    String handle(Map<String, String> params);
+    ResponseBody handle(Map<String, String> params);
 }

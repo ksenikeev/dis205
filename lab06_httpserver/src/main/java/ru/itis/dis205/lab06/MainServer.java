@@ -32,7 +32,7 @@ public class MainServer {
                 BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
                 String responseHeader = null;
-                String responseBody = null;
+                ResponseBody responseBody = null;
 
                 // Обработка 1-й строки заголовка:
                 String receivedData = br.readLine();
@@ -43,7 +43,11 @@ public class MainServer {
                 // если метод GET, то идем в обработку ресурса
                 String method = firstData[0];
                 if (method.equalsIgnoreCase("GET")) {
-                    String resource = firstData[1];
+                    String[] fullResource = firstData[1].split("\\?");
+                    String resource = fullResource[0];
+
+                    String[] paramPair = fullResource[1].split("=");
+                    
 
                     // ищем обработчик ресурса
                     ResourceHandler handler = handlers.get(resource);
@@ -55,9 +59,9 @@ public class MainServer {
                         responseHeader = "HTTP/1.1 200 OK\r\n" +
                             "Server: My Server Name\r\n" +
                             "Date: " + new Date() + "\r\n" +
-                            "Content-Type: text/html;charset=utf-8\r\n" +
+                            "Content-Type: " + responseBody.contentType + "\r\n" +
                             "Content-Length: "
-                            + responseBody.getBytes("utf-8").length + "\r\n" +
+                            + responseBody.body.getBytes("utf-8").length + "\r\n" +
                             "\r\n";
                     } else {
                         //Если ресурс не найден -> 404
@@ -65,9 +69,9 @@ public class MainServer {
                         responseHeader = "HTTP/1.1 404 Not Found\r\n" +
                                 "Server: My Server Name\r\n" +
                                 "Date: " + new Date() + "\r\n" +
-                                "Content-Type: text/html;charset=utf-8\r\n" +
+                                "Content-Type: " + responseBody.contentType + "\r\n" +
                                 "Content-Length: "
-                                + responseBody.getBytes("utf-8").length + "\r\n" +
+                                + responseBody.body.getBytes("utf-8").length + "\r\n" +
                                 "\r\n";
                     }
 
