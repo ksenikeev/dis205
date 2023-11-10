@@ -21,7 +21,7 @@ public class LoginGUIServlet extends HttpServlet {
         request.setAttribute("message", "");
 
         //Передаем управление диспетчеру , говоря, что требуется обработать сервлет по пути
-        // index.ftlxxx
-        request.getRequestDispatcher("login.ftlxxx").forward(request, response);
+        // index.ftl
+        request.getRequestDispatcher("login.ftl").forward(request, response);
     }
 }

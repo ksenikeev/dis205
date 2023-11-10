@@ -34,7 +34,7 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("hello", "Hello for freemarker!");
 
         //Передаем управление диспетчеру , говоря, что требуется обработать сервлет по пути
-        // index.ftlxxx
-        request.getRequestDispatcher("index.ftlxxx").forward(request, response);
+        // index.ftl
+        request.getRequestDispatcher("index.ftl").forward(request, response);
     }
 }

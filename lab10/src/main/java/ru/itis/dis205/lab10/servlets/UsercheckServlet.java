@@ -30,7 +30,7 @@ public class UsercheckServlet extends HttpServlet {
         } else {
             // Атрибуты: запрос, сессия, контекст
             request.setAttribute("message", "Неверный пароль или логин");
-            request.getRequestDispatcher("login.ftlxxx").forward(request, response);
+            request.getRequestDispatcher("login.ftl").forward(request, response);
         }
     }
 }
