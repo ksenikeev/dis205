@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.itis.dis05.lab08</groupId>
-    <artifactId>lab08</artifactId>
+    <groupId>ru.itis.dis05.lab09</groupId>
+    <artifactId>lab09</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -50,9 +50,9 @@
                             <directory>src/main/webapp</directory>
                         </resource>
                     </webResources>
-<!--
-                    <webappDirectory>/opt/apache-tomcat-10.1.7/webapps</webappDirectory>
--->
+                    <!--
+                                        <webappDirectory>/opt/apache-tomcat-10.1.7/webapps</webappDirectory>
+                    -->
                 </configuration>
             </plugin>
 
@@ -68,8 +68,8 @@
                             <goal>copy</goal>
                         </goals>
                         <configuration>
-                            <sourceFile>target/lab08.war</sourceFile>
-                            <destinationFile>/opt/apache-tomcat-10.1.7/webapps/lab08.war</destinationFile>
+                            <sourceFile>target/lab09.war</sourceFile>
+                            <destinationFile>/opt/apache-tomcat-10.1.7/webapps/lab09.war</destinationFile>
                         </configuration>
                     </execution>
                 </executions>

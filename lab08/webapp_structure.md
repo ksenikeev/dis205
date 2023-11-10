@@ -75,3 +75,7 @@ login=kamil&password=secret
 GET /lab08/login?login=admin&password=qwerty HTTP/1.1
 
 ```
+
+## Maven war plugin
+
+https://maven.apache.org/plugins/maven-war-plugin/index.html
