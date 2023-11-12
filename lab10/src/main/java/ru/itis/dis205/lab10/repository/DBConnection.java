@@ -23,7 +23,7 @@ public class DBConnection {
             Connection connection =
                     DriverManager.getConnection(
                             // адрес БД , имя пользователя, пароль
-                            "jdbc:postgresql://localhost:5432/bankdb","postgres","passwd");
+                            "jdbc:postgresql://localhost:5432/market","postgres","passwd");
             return connection;
         }
     }

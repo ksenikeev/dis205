@@ -12,5 +12,8 @@
 
 <h2 color="red">${hello!}</h2>
 
+<div>Ваше имя: ${clientname!}</div>
+<div>Ваш Id: ${clientid!}</div>
+
 </body>
 </html>

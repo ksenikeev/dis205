@@ -5,11 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import ru.itis.dis205.lab10.model.Bank;
-import ru.itis.dis205.lab10.service.BankService;
-
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/login")
 public class LoginGUIServlet extends HttpServlet {

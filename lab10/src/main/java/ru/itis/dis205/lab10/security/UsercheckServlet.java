@@ -1,4 +1,4 @@
-package ru.itis.dis205.lab10.servlets;
+package ru.itis.dis205.lab10.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,14 +6,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import ru.itis.dis205.lab10.model.Bank;
-import ru.itis.dis205.lab10.service.BankService;
-
+import ru.itis.dis205.lab10.model.Client;
+import ru.itis.dis205.lab10.service.ClientService;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/usercheck")
 public class UsercheckServlet extends HttpServlet {
+
+    private ClientService service = new ClientService();
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -21,9 +21,15 @@ public class UsercheckServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if ("admin".equals(username) && "admin".equals(password)) {
+        Client client = service.findByUserName(username);
+
+        if ( client != null && client.getPassword().equals(password)) {
+
+            // Создаем сессию
             HttpSession session = request.getSession();
-            session.setAttribute("username", username);
+
+            session.setAttribute("clientname", client.getName());
+            session.setAttribute("clientid", client.getId());
 
             response.sendRedirect("/lab10/");
 

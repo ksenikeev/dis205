@@ -5,11 +5,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import ru.itis.dis205.lab10.model.Bank;
-import ru.itis.dis205.lab10.service.BankService;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * web.xml
@@ -25,11 +23,15 @@ import java.util.List;
 @WebServlet("/")
 public class IndexServlet extends HttpServlet {
 
-    private BankService service = new BankService();
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        List<Bank> lst = service.findAll();
 
+        HttpSession session = request.getSession(false);
+        String clientName = (String)session.getAttribute("clientname");
+        Long clientId = (Long)session.getAttribute("clientid");
+
+        request.setAttribute("clientid", clientId);
+        request.setAttribute("clientname", clientName);
         // Атрибуты: запрос, сессия, контекст
         request.setAttribute("hello", "Hello for freemarker!");
 
