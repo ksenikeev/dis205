@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Сервлет для отображения странички с логином и паролем для аутентификации
+ */
 @WebServlet("/login")
 public class LoginGUIServlet extends HttpServlet {
 
