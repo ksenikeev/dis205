@@ -24,5 +24,8 @@
         <div><input type="submit" value="Вход"></div>
     </form>
 
+    <div>
+        <a href="/lab10/regpage">Регистрация</a>
+    </div>
 </body>
 </html>

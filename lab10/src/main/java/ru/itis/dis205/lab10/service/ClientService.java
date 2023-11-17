@@ -13,6 +13,10 @@ public class ClientService {
         repository = new ClientRepository();
     }
 
+    public Client save(Client client) {
+        return repository.save(client);
+    }
+
     public List<Client> findAll() {
         return repository.findAll();
     }

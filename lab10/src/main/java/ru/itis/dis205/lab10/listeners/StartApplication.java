@@ -11,6 +11,7 @@ import java.sql.SQLException;
 public class StartApplication implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent sce) {
+
         System.out.println("start app ");
         try {
             DBConnection.getConnection();

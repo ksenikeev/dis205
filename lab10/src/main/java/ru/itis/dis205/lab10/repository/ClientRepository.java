@@ -86,10 +86,42 @@ public class ClientRepository {
                         resultSet.getString("phonenumber")
                 );
             }
+
+            resultSet.close();
+            statement.close();
+
             return result;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
+    public Client save(Client client) {
+        try {
+            Connection connection = DBConnection.getConnection();
+
+            PreparedStatement statement = connection.prepareStatement(
+                    "insert into client (name,username,password,phonenumber) " +
+                            "values ( ? , ? , ? , ? ) returning id "
+            );
+
+            statement.setString(1, client.getName());
+            statement.setString(2, client.getUserName());
+            statement.setString(3, client.getPassword());
+            statement.setString(4, client.getPhoneNumber());
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                client.setId(resultSet.getLong("id"));
+            }
+
+            resultSet.close();
+            statement.close();
+
+            return client;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

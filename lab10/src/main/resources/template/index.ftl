@@ -8,12 +8,13 @@
           href="/lab08/favicon.ico">
 </head>
 <body>
-<h1>Form free marker</h1>
+<h1>Магазин молочной продукции</h1>
 
-<h2 color="red">${hello!}</h2>
 
 <div>Ваше имя: ${clientname!}</div>
 <div>Ваш Id: ${clientid!}</div>
+
+<a href="/lab10/merchlist">Список продуктов</a>
 
 </body>
 </html>

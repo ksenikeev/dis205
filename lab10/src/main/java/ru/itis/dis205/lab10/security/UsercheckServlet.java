@@ -24,6 +24,7 @@ public class UsercheckServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("usercheck servlet");
 
         // извлекаем из запроса параметры формы
         String username = request.getParameter("username");

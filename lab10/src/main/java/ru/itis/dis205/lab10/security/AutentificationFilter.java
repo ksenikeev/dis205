@@ -20,20 +20,28 @@ public class AutentificationFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 
-        if (httpServletRequest.getPathInfo().equals("/usercheck")) {
-            filterChain.doFilter(request, response);
-        }
-
-        HttpSession session = ((HttpServletRequest)request).getSession(false);
-
-        if (session != null
-            && session.getAttribute("clientid") != null) {
-
-            //Передаем управление следующему фильтру
+        if (httpServletRequest.getServletPath().equals("/usercheck")
+            || httpServletRequest.getServletPath().equals("/regpage")
+            || httpServletRequest.getServletPath().equals("/registration")
+            || httpServletRequest.getServletPath().startsWith("/resources")
+        ) {
+            System.out.println("usercheck");
             filterChain.doFilter(request, response);
         } else {
-            request.getRequestDispatcher("/login").forward(request, response);
 
+            System.out.println("not usercheck");
+
+            HttpSession session = ((HttpServletRequest) request).getSession(false);
+
+            if (session != null
+                    && session.getAttribute("clientid") != null) {
+
+                //Передаем управление следующему фильтру
+                filterChain.doFilter(request, response);
+            } else {
+                request.getRequestDispatcher("/login").forward(request, response);
+
+            }
         }
 
     }
