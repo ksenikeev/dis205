@@ -19,7 +19,6 @@ public class AutentificationFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-
         if (httpServletRequest.getServletPath().equals("/usercheck")
             || httpServletRequest.getServletPath().equals("/regpage")
             || httpServletRequest.getServletPath().equals("/registration")

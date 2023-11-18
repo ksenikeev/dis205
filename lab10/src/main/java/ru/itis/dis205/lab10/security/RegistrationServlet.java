@@ -51,6 +51,6 @@ public class RegistrationServlet extends HttpServlet {
         session.setAttribute("clientid", client.getId());
 
         // перенаправляем на главную страницу
-        response.sendRedirect("/lab10/");
+        response.sendRedirect("/lab10/index");
     }
 }

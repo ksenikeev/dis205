@@ -44,7 +44,7 @@ public class UsercheckServlet extends HttpServlet {
             session.setAttribute("clientid", client.getId());
 
             // перенаправляем на главную страницу
-            response.sendRedirect("/lab10/");
+            response.sendRedirect("/lab10/index");
 
         } else {
             // Формируем вновь страницу для ввода логина и пароля с сообщением об ошибке

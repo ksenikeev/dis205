@@ -26,7 +26,7 @@ import java.io.IOException;
  *         <url-pattern>/</url-pattern>
  *     </servlet-mapping>
  */
-@WebServlet("/")
+@WebServlet("/index")
 public class IndexServlet extends HttpServlet {
 
     @Override

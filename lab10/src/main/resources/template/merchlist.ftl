@@ -11,17 +11,18 @@
 <h1>Товары</h1>
 
 <#list merchs as merch>
-<div>
-    <div>Артикул: ${merch.articul}</div>
-    <div>Наименование: ${merch.name}</div>
-    <div>Цена: ${merch.price}</div>
-    <div>
-    <form method="post" action="/lab10/selectmerch">
-        <input type="hidden" name="merchid" value="${merch.id}">
-        <input type="submit" value="Выбрать">
-    </form>
-    </div>
-</div>
+    <fieldset>
+        <legend>${merch.name}</legend>
+        <div>Артикул: ${merch.articul}</div>
+        <div>Наименование: ${merch.name}</div>
+        <div>Цена: ${merch.price}</div>
+        <div>
+        <form method="post" action="/lab10/selectmerch">
+            <input type="hidden" name="merchid" value="${merch.id}">
+            <input type="submit" value="Выбрать">
+        </form>
+        </div>
+    </fieldset>
 </#list>
 
 </body>
