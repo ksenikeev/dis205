@@ -1,5 +1,8 @@
 package ru.itis.dis205.semestrii;
 
+/**
+ * Команда, передаваямая по сети
+ */
 public class Cmd {
 
     /*

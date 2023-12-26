@@ -40,7 +40,12 @@ public class GameComponent extends JComponent implements KeyListener, MouseMotio
         Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                imageIndex = (imageIndex + 1) % image.length;
+                if (StarShip.playStatus) {
+                    // меняем поочереди 3 картинки, имитируя анимацию
+                    imageIndex = (imageIndex + 1) % image.length;
+
+                    // проигрываем звук через 100 * 20 миллисекунд
+/*
                 count_to_start_play++;
                 if (count_to_start_play >= 20) {
                     count_to_start_play = 0;
@@ -49,10 +54,12 @@ public class GameComponent extends JComponent implements KeyListener, MouseMotio
                         play();
                     }).start();
 
-                    Cmd cmd = handler.getCmd();
+                    //Cmd cmd = handler.getCmd();
                 }
+*/
 
-                repaint();
+                    repaint();
+                }
             }
 
 

@@ -18,12 +18,9 @@ public class MessageHandler {
 
     private void handle() throws IOException {
         while (true) {
-
             InputStream is = partnerSocket.getInputStream();
             BufferedReader isr = new BufferedReader(new InputStreamReader(is));
             String str = isr.readLine();
-
-
         }
     }
 
