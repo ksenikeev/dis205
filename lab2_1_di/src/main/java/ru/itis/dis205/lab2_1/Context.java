@@ -16,8 +16,8 @@ public class Context {
     }
 
     public void scanComponent() {
-        PersonRepository
-        o =
+        //PersonRepository
+
     }
 
     public void findAndInitInjectedFields() {
