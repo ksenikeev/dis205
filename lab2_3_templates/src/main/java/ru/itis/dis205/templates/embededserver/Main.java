@@ -1,4 +1,4 @@
-package ru.itis.dis205.embededserver;
+package ru.itis.dis205.templates.embededserver;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -8,6 +8,7 @@ import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,4 +1,4 @@
-package ru.itis.dis205.context;
+package ru.itis.dis205.templates.context;
 
 /**
  * Класс Контекст приложения
