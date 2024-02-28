@@ -28,6 +28,11 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <version>10.1.18</version>
         </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.32</version>
+        </dependency>
     </dependencies>
 
 </project>
