@@ -3,6 +3,7 @@ package ru.itis.dis205.lab2_4;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.itis.dis205.lab2_4.component.Amount;
+import ru.itis.dis205.lab2_4.component.Client;
 import ru.itis.dis205.lab2_4.component.FirstBank;
 import ru.itis.dis205.lab2_4.config.Config;
 
@@ -23,6 +24,9 @@ public class Main {
 
         FirstBank bank = (FirstBank) context.getBean("bank");
         System.out.println(bank);
+
+        Client client = (Client) context.getBean("client");
+        System.out.println(client.getName());
 
     }
 }
