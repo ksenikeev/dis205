@@ -15,6 +15,10 @@
 4. При создании EntityManager необходимо получить структуру сущностей,
  проверить соответствие этой структуры реляционной модели, создать подключение к БД
 
+5. 
+
+четверг 1 пара
+
 ```sql
 create database music;
 
@@ -80,3 +84,42 @@ WHERE a.attrelid = (
 )
 AND a.attnum > 0 AND NOT a.attisdropped
 ```
+
+
+# lab ORM продолжение
+1. "Нанизываем" все на контекст Spring.
+2. Используем интерфейс DataSource (для гибкого управления физическими подключениями к БД).
+3. Задействуем пул подключений (HikariCP).
+4. Подключим механизм версионирования БД (flydb).
+
+```xml
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        <dependency>
+             <groupId>com.zaxxer</groupId>
+             <artifactId>HikariCP</artifactId>
+             <version>5.1.0</version>
+        </dependency>
+
+</dependencies>
+
+```
+
+Система версионирования Flyway
+
+db/migration
+
+V1_0__description.sql
+
+```json
+
+```
+        Flyway flyway = (Flyway) context.getBean("flyway");
+        flyway.migrate();
+        // Получение экземпляра бина
+        MusicRepository repository = (MusicRepository) context.getBean("musicRepository");
+        repository.printAllTrack();
