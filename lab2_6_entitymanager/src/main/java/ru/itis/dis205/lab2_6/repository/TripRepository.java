@@ -18,6 +18,9 @@ public class TripRepository {
         entityManager = emf.createEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist(trip);
+
+        trip.setFinishPoint("Ульяновск");
+
         entityManager.getTransaction().commit();
         entityManager.close();
         return trip;
