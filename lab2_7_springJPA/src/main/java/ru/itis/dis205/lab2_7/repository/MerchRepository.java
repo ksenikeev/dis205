@@ -6,7 +6,6 @@ import jakarta.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.itis.dis205.lab2_7.model.Merch;
-
 import java.util.List;
 
 @Repository
@@ -15,7 +14,7 @@ public class MerchRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Transactional
+    //@Transactional
     public Merch save(Merch t) {
         return entityManager.merge(t);
     }
@@ -39,5 +38,9 @@ public class MerchRepository {
         query.setParameter("name", name + "%");
 
         return query.getResultList();
+    }
+
+    public Merch findById(Long id) {
+        return entityManager.find(Merch.class, id);
     }
 }

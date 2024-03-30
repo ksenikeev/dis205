@@ -13,13 +13,13 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import javax.sql.DataSource;
 import java.util.Properties;
 
 // Описываем контекст через класс-конфигурацию
 @Configuration
-@ComponentScan(basePackages = {"ru.itis.dis205.lab2_7.repository"})
+@ComponentScan(basePackages = {"ru.itis.dis205.lab2_7.repository",
+        "ru.itis.dis205.lab2_7.app", "ru.itis.dis205.lab2_7.service"})
 @EnableTransactionManagement
 @EnableJpaRepositories
 public class Config {
