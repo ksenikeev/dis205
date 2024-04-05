@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ru.itis.dis205.lab2_8.model.Address;
 import ru.itis.dis205.lab2_8.service.AddressService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -36,7 +37,11 @@ public class AddressController {
         List<Address> lst = addressService.findAddressByNameTS(name, page);
         model.addAttribute("lst", lst);
         model.addAttribute("name", name);
-        model.addAttribute("count_pages", addressService.countPages(name));
+        List<String> pages = new ArrayList<>();
+        Long cp = addressService.countPages(name);
+        for(int i = 1; i <= cp; ++i) pages.add(String.valueOf(i));
+
+        model.addAttribute("pages", pages);
 
         return "address";
     }

@@ -27,7 +27,7 @@
 
 
         <div>
-            <#list 1..3 as x>
+            <#list pages as x>
                 <span><a id="link_${x}" href="#" onclick="find(${x})">${x}</a></span>
             </#list>
         </div>
