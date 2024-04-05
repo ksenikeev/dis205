@@ -11,7 +11,16 @@ public class AddressService {
 
     @Autowired
     private AddressRepository addressRepository;
+
     public List<Address> findAddressByName(String name, Integer page) {
         return addressRepository.findAddressByName(name, page);
+    }
+
+    public List<Address> findAddressByNameTS(String name, Integer page) {
+        return addressRepository.findAddressByNameTS(name, page);
+    }
+
+    public Long countPages(String name) {
+        return addressRepository.countPages(name);
     }
 }

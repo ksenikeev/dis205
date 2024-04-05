@@ -14,7 +14,7 @@
            name: <input type="text" name="name"/>
         </div>
         <div>
-           page: <input type="text" name="page"/>
+           page: <input type="text" name="page" value="1"/>
         </div>
         <div>
             <input type="submit" value="Найти">
