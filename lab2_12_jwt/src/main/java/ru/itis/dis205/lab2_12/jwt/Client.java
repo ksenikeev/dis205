@@ -21,9 +21,12 @@ public class Client {
                         "{\"username\":\"admin\",\"password\":\"pass\"}"))
                 .build();
 
-        HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
 
         String respBody = (String) response.body();
+
+        System.out.println(respBody);
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -33,7 +36,7 @@ public class Client {
             System.out.println(ar.getAccessToken());
 
             request = HttpRequest.newBuilder()
-                    .uri(new URI("http://localhost:8090/admin/users"))
+                    .uri(new URI("http://localhost:8090/admin/vehicles"))
                     .headers("Authorization","Bearer " + ar.getAccessToken())
                     .GET()
                     .build();

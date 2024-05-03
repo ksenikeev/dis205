@@ -38,7 +38,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     @Override
     public void doFilterInternal(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("FILTER ");
-        HttpServletRequest request = (HttpServletRequest)servletRequest;
+        HttpServletRequest request = servletRequest;
         // получаем токен
         //Authorization: Bearer <token>
         String bearerToken = request.getHeader("Authorization");

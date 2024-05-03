@@ -21,7 +21,7 @@ public class AdminUsersConroller {
     @Autowired
     private UserRepository userRepository;
 
-    //@PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/users")
     public ResponseEntity<List<UserDto>> findAllUser() {
        return ResponseEntity.ok(userRepository.findAll().stream().map(UserDto::from).toList());

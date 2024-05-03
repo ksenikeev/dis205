@@ -12,8 +12,8 @@ public class Vehicle {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String type;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Properties properties;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Feature> features;
 }

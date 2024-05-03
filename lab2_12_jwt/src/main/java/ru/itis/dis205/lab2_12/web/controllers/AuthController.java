@@ -19,7 +19,8 @@ public class AuthController {
     private String SECRET;
 
     @PostMapping("/login")
-    public ResponseEntity<?> authentificateByUserNameAndPassword(@RequestBody AuthenticationRequest authenticationRequest) {
+    public ResponseEntity<?> authentificateByUserNameAndPassword(
+            @RequestBody AuthenticationRequest authenticationRequest) {
         // validate user
         System.out.println("validate");
         User user = User.builder()

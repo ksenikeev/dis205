@@ -1,18 +1,19 @@
 package ru.itis.dis205.lab2_12.web.model.transport;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter@Setter
 @Entity
-public class Properties {
+@Table(name = "geometry")
+public class EntityGeometry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JsonProperty("VehicleMetaData")
-    private VehicleMetaData vehicleMetaData;
+    String type;
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Coordinates> coordinates;
 }
