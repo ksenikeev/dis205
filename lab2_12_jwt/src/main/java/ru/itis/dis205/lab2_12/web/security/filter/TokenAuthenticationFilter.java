@@ -60,6 +60,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
                                 .email(decodedJWT.getClaim("email").asString())
                                 .id(decodedJWT.getClaim("sub").asLong()).build());
                 authentication.setUserDetails(userDetails);
+
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             } catch (JWTVerificationException e) {
                 //throw new AuthenticationCredentialsNotFoundException("bad jwt token");

@@ -8,9 +8,8 @@ import lombok.Setter;
 @Getter@Setter
 @Entity
 public class Address {
-
     @Id
     private Long id;
-
+    private String postalIndex;
     private String fullpath;
 }

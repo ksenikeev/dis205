@@ -14,4 +14,6 @@ public class Person {
     private String name;
     @OneToOne(cascade = CascadeType.ALL)
     private Passport passport;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
 }
