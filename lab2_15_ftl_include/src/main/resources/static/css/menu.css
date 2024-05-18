@@ -1,0 +1,20 @@
+.c-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #dadada;
+}
+.c-menu-l {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: center;
+}
+.c-menu-l span {
+    margin:5px;
+}
+.c-menu-r {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+}
