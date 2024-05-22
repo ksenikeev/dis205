@@ -38,6 +38,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers( "/usercheck").permitAll()
                         .requestMatchers( "/static/**").permitAll()
+                        .requestMatchers( "/testjson/**").permitAll()
                         .anyRequest().authenticated()
                 );
         http.formLogin(formLogin ->
